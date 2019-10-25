@@ -1,0 +1,10 @@
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\bin\Debug\MsSqlQueryExecutor.exe
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\bin\Debug\MsSqlQueryExecutor.pdb
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.MainForm.resources
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.Properties.Resources.resources
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.csproj.GenerateResource.cache
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.csproj.CoreCompileInputs.cache
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.exe
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.pdb
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.ConnectionStringDialogBox.resources
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\bin\Debug\MsSqlQueryExecutor.exe.config
