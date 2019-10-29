@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace MsSqlQueryExecutor
 {
@@ -69,12 +71,42 @@ namespace MsSqlQueryExecutor
                             {
                                 ServerEntity server = servers[i];
 
-                                textResult.Text += server.ExecuteText(databaseNode.Text, script.Text) + "\r\n";
+                                textResult.Text += string.Format("[{0}] Database:{1}\r\n{2}\r\n", DateTime.Now.ToString("dd.MM.yyyy hh:mm:ss.ffff"), databaseNode.Text, server.ExecuteText(databaseNode.Text, script.Text));
                             }
                         }
                     }
                 }
             }
+        }
+
+        private void tableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+
+            if (tree.Nodes.Count > 0)
+            {
+                for (int i = 0; i < tree.Nodes.Count; i++)
+                {
+                    TreeNode serverNode = tree.Nodes[i];
+
+                    if (serverNode.Nodes.Count > 0)
+                    {
+                        for (int j = 0; j < serverNode.Nodes.Count; j++)
+                        {
+                            TreeNode databaseNode = serverNode.Nodes[j];
+
+                            if (databaseNode.Checked || serverNode.Checked)
+                            {
+                                ServerEntity server = servers[i];
+
+                                ds.Merge(server.ExecuteTable(databaseNode.Text, script.Text));
+                            }
+                        }
+                    }
+                }
+            }
+
+            dataGridView1.DataSource = ds.Tables[0];
         }
     }
 }

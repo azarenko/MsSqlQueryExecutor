@@ -8,3 +8,4 @@ D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.e
 D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.pdb
 D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.ConnectionStringDialogBox.resources
 D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\bin\Debug\MsSqlQueryExecutor.exe.config
+D:\projects\MsSqlQueryExecutor\MsSqlQueryExecutor\obj\Debug\MsSqlQueryExecutor.csprojAssemblyReference.cache

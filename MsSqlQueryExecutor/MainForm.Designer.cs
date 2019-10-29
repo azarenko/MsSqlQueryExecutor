@@ -33,6 +33,7 @@
             this.tree = new System.Windows.Forms.TreeView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.script = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -43,11 +44,9 @@
             this.addNewServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearServerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.executeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.script = new System.Windows.Forms.TextBox();
-            this.noResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scalarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -59,7 +58,9 @@
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -130,6 +131,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Script text";
             // 
+            // script
+            // 
+            this.script.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MsSqlQueryExecutor.Properties.Settings.Default, "ScriptText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.script.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.script.ForeColor = System.Drawing.Color.Navy;
+            this.script.Location = new System.Drawing.Point(3, 16);
+            this.script.MaxLength = 4000000;
+            this.script.Multiline = true;
+            this.script.Name = "script";
+            this.script.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.script.Size = new System.Drawing.Size(564, 251);
+            this.script.TabIndex = 0;
+            this.script.Text = global::MsSqlQueryExecutor.Properties.Settings.Default.ScriptText;
+            this.script.WordWrap = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tabControl1);
@@ -166,6 +182,7 @@
             // textResult
             // 
             this.textResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.textResult.Location = new System.Drawing.Point(3, 3);
             this.textResult.MaxLength = 4000000;
             this.textResult.Multiline = true;
@@ -177,6 +194,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -208,7 +226,9 @@
             // addNewServerToolStripMenuItem
             // 
             this.addNewServerToolStripMenuItem.Name = "addNewServerToolStripMenuItem";
-            this.addNewServerToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.addNewServerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.A)));
+            this.addNewServerToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.addNewServerToolStripMenuItem.Text = "Add new server";
             this.addNewServerToolStripMenuItem.Click += new System.EventHandler(this.addNewServerToolStripMenuItem_Click);
             // 
@@ -222,43 +242,17 @@
             // executeToolStripMenuItem
             // 
             this.executeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.noResultToolStripMenuItem,
-            this.scalarToolStripMenuItem,
             this.textToolStripMenuItem,
             this.tableToolStripMenuItem});
             this.executeToolStripMenuItem.Name = "executeToolStripMenuItem";
             this.executeToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.executeToolStripMenuItem.Text = "Execute";
             // 
-            // script
-            // 
-            this.script.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MsSqlQueryExecutor.Properties.Settings.Default, "ScriptText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.script.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.script.Location = new System.Drawing.Point(3, 16);
-            this.script.MaxLength = 4000000;
-            this.script.Multiline = true;
-            this.script.Name = "script";
-            this.script.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.script.Size = new System.Drawing.Size(564, 251);
-            this.script.TabIndex = 0;
-            this.script.Text = global::MsSqlQueryExecutor.Properties.Settings.Default.ScriptText;
-            this.script.WordWrap = false;
-            // 
-            // noResultToolStripMenuItem
-            // 
-            this.noResultToolStripMenuItem.Name = "noResultToolStripMenuItem";
-            this.noResultToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.noResultToolStripMenuItem.Text = "No result";
-            // 
-            // scalarToolStripMenuItem
-            // 
-            this.scalarToolStripMenuItem.Name = "scalarToolStripMenuItem";
-            this.scalarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.scalarToolStripMenuItem.Text = "Scalar";
-            // 
             // textToolStripMenuItem
             // 
             this.textToolStripMenuItem.Name = "textToolStripMenuItem";
+            this.textToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
             this.textToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.textToolStripMenuItem.Text = "Text";
             this.textToolStripMenuItem.Click += new System.EventHandler(this.textToolStripMenuItem_Click);
@@ -266,8 +260,28 @@
             // tableToolStripMenuItem
             // 
             this.tableToolStripMenuItem.Name = "tableToolStripMenuItem";
+            this.tableToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
             this.tableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tableToolStripMenuItem.Text = "Table";
+            this.tableToolStripMenuItem.Click += new System.EventHandler(this.tableToolStripMenuItem_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.ShowCellToolTips = false;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.ShowRowErrors = false;
+            this.dataGridView1.Size = new System.Drawing.Size(550, 234);
+            this.dataGridView1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -294,8 +308,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,10 +335,9 @@
         private System.Windows.Forms.ToolStripMenuItem addNewServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearServerListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem executeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem noResultToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scalarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem textToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tableToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
