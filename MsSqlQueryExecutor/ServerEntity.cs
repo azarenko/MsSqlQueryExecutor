@@ -22,6 +22,7 @@ namespace MsSqlQueryExecutor
             connectionString = ConnectionString;
             connection = new SqlConnection(connectionString);
             connection.Open();
+            connection.ChangeDatabase("master");
 
             serverName = connection.DataSource;
 
