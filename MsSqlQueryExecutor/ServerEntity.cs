@@ -20,9 +20,12 @@ namespace MsSqlQueryExecutor
         public ServerEntity(string ConnectionString)
         {
             connectionString = ConnectionString;
-            connection = new SqlConnection(connectionString);
+            SqlConnectionStringBuilder csb = new SqlConnectionStringBuilder(connectionString)
+            {
+                InitialCatalog = "master"
+            };
+            connection = new SqlConnection(csb.ConnectionString);
             connection.Open();
-            connection.ChangeDatabase("master");
 
             serverName = connection.DataSource;
 
@@ -63,9 +66,12 @@ namespace MsSqlQueryExecutor
         {
             StringBuilder sb = new StringBuilder();
 
-            connection = new SqlConnection(connectionString);
+            SqlConnectionStringBuilder csb = new SqlConnectionStringBuilder(connectionString)
+            {
+                InitialCatalog = Database
+            };
+            connection = new SqlConnection(csb.ConnectionString);
             connection.Open();
-            connection.ChangeDatabase(Database);
 
             serverName = connection.DataSource;
 
@@ -107,9 +113,12 @@ namespace MsSqlQueryExecutor
             DataTable table = new DataTable("temp");
             ds.Tables.Add(table);
 
-            connection = new SqlConnection(connectionString);
+            SqlConnectionStringBuilder csb = new SqlConnectionStringBuilder(connectionString)
+            {
+                InitialCatalog = Database
+            };
+            connection = new SqlConnection(csb.ConnectionString);
             connection.Open();
-            connection.ChangeDatabase(Database);
 
             serverName = connection.DataSource;
 
